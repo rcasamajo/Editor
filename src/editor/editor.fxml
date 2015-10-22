@@ -13,22 +13,25 @@
    <children>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Fitxer">
             <items>
-              <MenuItem mnemonicParsing="false" text="Sortir" />
+              <MenuItem fx:id="miFSortir" mnemonicParsing="false" onAction="#sortir" text="Sortir" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem fx:id="miECopiar" mnemonicParsing="false" onAction="#eCopiar" text="Copiar" />
+                  <MenuItem fx:id="miETallar" mnemonicParsing="false" onAction="#eTallar" text="Tallar" />
+                  <MenuItem fx:id="miEPaste" mnemonicParsing="false" onAction="#ePaste" text="Enganxar" />
+                  <MenuItem fx:id="miEUndo" mnemonicParsing="false" onAction="#eUndo" text="Desfer" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Opcions">
               <items>
                   <Menu mnemonicParsing="false" text="Font">
                     <items>
-                      <MenuItem fx:id="miOFArial" mnemonicParsing="false" onAction="#setFontArial" text="SansSerif" />
-                      <MenuItem fx:id="miOFTimes" mnemonicParsing="false" onAction="#setFontTimes" text="FreeMono" />
+                      <MenuItem fx:id="miOFArial" mnemonicParsing="false" onAction="#setFont" text="SansSerif" />
+                      <MenuItem fx:id="miOFTimes" mnemonicParsing="false" onAction="#setFont" text="FreeMono" />
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Tamany">
@@ -48,7 +51,7 @@
       </MenuBar>
       <ToolBar layoutY="29.0" prefHeight="40.0" prefWidth="600.0">
         <items>
-          <Button mnemonicParsing="false" text="Button" />
+          <Button fx:id="btCopy" mnemonicParsing="false" onAction="#eCopiar" text="Button" />
         </items>
       </ToolBar>
       <TextArea fx:id="text" layoutY="69.0" prefHeight="337.0" prefWidth="600.0">
