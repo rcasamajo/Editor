@@ -51,7 +51,7 @@
       </MenuBar>
       <ToolBar layoutY="29.0" prefHeight="40.0" prefWidth="600.0">
         <items>
-          <Button fx:id="btCopy" mnemonicParsing="false" onAction="#eCopiar" text="Button" />
+          <Button fx:id="btCopy" mnemonicParsing="false" onAction="#eCopiar" />
         </items>
       </ToolBar>
       <TextArea fx:id="text" layoutY="69.0" prefHeight="337.0" prefWidth="600.0">

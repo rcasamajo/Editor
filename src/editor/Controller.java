@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 
 import javax.xml.soap.Text;
@@ -38,8 +37,6 @@ public class Controller {
      */
     public void setFont(ActionEvent actionEvent) {
         text.setFont(new Font(((MenuItem)actionEvent.getSource()).getText(), fontSize));
-
-        btCopy.setGraphic(new ImageView("copy.png"));
     }
 
     /**
