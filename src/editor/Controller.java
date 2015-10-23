@@ -2,17 +2,17 @@ package editor;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.event.Event;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 
-import javax.xml.soap.Text;
-
 public class Controller {
     public TextArea text;
-    public MenuItem miOFTimes;
-    public MenuItem miOFArial;
     public MenuItem miOT12;
     public MenuItem miOT10;
     public MenuItem miFSortir;
@@ -24,13 +24,10 @@ public class Controller {
     public MenuItem miAAbout;
     public AnchorPane mainPane;
 
-    private double fontSize;
-
     /**
      * S'executa al iniciar l'aplicació.
      */
     public void initialize(){
-        fontSize = text.getFont().getSize();
         btCopy.setGraphic(new ImageView("copy.png"));
     }
 
@@ -39,7 +36,7 @@ public class Controller {
      * @param actionEvent Event onAction de tots els MenuItem
      */
     public void setFont(ActionEvent actionEvent) {
-        text.setFont(new Font(((MenuItem) actionEvent.getSource()).getText(), fontSize));
+        text.setFont(new Font(((MenuItem) actionEvent.getSource()).getText(), text.getFont().getSize()));
     }
 
     /**
@@ -47,7 +44,7 @@ public class Controller {
      * @param actionEvent Event onAction de tots els MenuItem
      */
     public void setFontSize(ActionEvent actionEvent) {
-        fontSize = Double.parseDouble(((MenuItem)actionEvent.getSource()).getText());
+        double fontSize = Double.parseDouble(((MenuItem) actionEvent.getSource()).getText());
         text.setFont(new Font(fontSize));
     }
 
@@ -91,12 +88,32 @@ public class Controller {
         text.undo();
     }
 
+    /**
+     * Menú Ajuda -> About. Mostra un diàleg modal amb info de la app.
+     *
+     * @param actionEvent Event onAction del MenuItem
+     */
     public void eAbout(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Look, an Information Dialog");
-        alert.setContentText("I have a great message for you!");
+        alert.setTitle("Cutreditor");
+        alert.setHeaderText("Un editor de text cutre!");
+        alert.setContentText("Fet durant el curs 2015-2016.");
 
         alert.showAndWait();
+    }
+
+    /**
+     * Deshabilita els items Copiar i Tallar si no hi ha text seleccionat.
+     *
+     * @param event Event onShowing del menú Editar.
+     */
+    public void deshabilitarCC(Event event) {
+        if (text.getSelectedText().equals("")) {
+            miECopiar.setDisable(true);
+            miETallar.setDisable(true);
+        } else {
+            miECopiar.setDisable(false);
+            miETallar.setDisable(false);
+        }
     }
 }

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.Controller">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.40" fx:controller="editor.Controller">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
         <menus>
@@ -18,7 +14,7 @@
               <MenuItem fx:id="miFSortir" mnemonicParsing="false" onAction="#sortir" text="Sortir" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+            <Menu mnemonicParsing="false" onShowing="#deshabilitarCC" text="Editar">
             <items>
                   <MenuItem fx:id="miECopiar" mnemonicParsing="false" onAction="#eCopiar" text="Copiar" />
                   <MenuItem fx:id="miETallar" mnemonicParsing="false" onAction="#eTallar" text="Tallar" />
@@ -30,8 +26,10 @@
               <items>
                   <Menu mnemonicParsing="false" text="Font">
                     <items>
-                      <MenuItem fx:id="miOFArial" mnemonicParsing="false" onAction="#setFont" text="SansSerif" />
-                      <MenuItem fx:id="miOFTimes" mnemonicParsing="false" onAction="#setFont" text="FreeMono" />
+                        <MenuItem mnemonicParsing="false" onAction="#setFont" text="SansSerif"/>
+                        <MenuItem mnemonicParsing="false" onAction="#setFont" text="FreeMono"/>
+                        <CheckMenuItem mnemonicParsing="false" onAction="#setFont" text="SansSerif"/>
+                        <CheckMenuItem mnemonicParsing="false" onAction="#setFont" text="FreeMono"/>
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Tamany">
@@ -57,6 +55,16 @@
       <TextArea fx:id="text" layoutY="69.0" prefHeight="337.0" prefWidth="600.0">
          <font>
             <Font name="SansSerif Regular" size="12.0" />
-         </font></TextArea>
+         </font>
+          <contextMenu>
+              <ContextMenu>
+                  <items>
+                      <MenuItem fx:id="miECopiar1" mnemonicParsing="false" onAction="#eCopiar" text="Copiar"/>
+                      <MenuItem fx:id="miETallar1" mnemonicParsing="false" onAction="#eTallar" text="Tallar"/>
+                      <MenuItem fx:id="miEPaste1" mnemonicParsing="false" onAction="#ePaste" text="Enganxar"/>
+                  </items>
+              </ContextMenu>
+          </contextMenu>
+      </TextArea>
    </children>
 </AnchorPane>
