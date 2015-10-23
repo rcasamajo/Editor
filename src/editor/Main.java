@@ -18,7 +18,6 @@ public class Main extends Application {
         primaryStage.show();
 
         Controller controller = (Controller)loader.getController();
-        controller.btCopy.setGraphic(new ImageView("copy.png"));
     }
 
 

@@ -2,9 +2,9 @@ package editor;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 
 import javax.xml.soap.Text;
@@ -21,6 +21,8 @@ public class Controller {
     public MenuItem miEPaste;
     public MenuItem miEUndo;
     public Button btCopy;
+    public MenuItem miAAbout;
+    public AnchorPane mainPane;
 
     private double fontSize;
 
@@ -29,6 +31,7 @@ public class Controller {
      */
     public void initialize(){
         fontSize = text.getFont().getSize();
+        btCopy.setGraphic(new ImageView("copy.png"));
     }
 
     /**
@@ -36,7 +39,7 @@ public class Controller {
      * @param actionEvent Event onAction de tots els MenuItem
      */
     public void setFont(ActionEvent actionEvent) {
-        text.setFont(new Font(((MenuItem)actionEvent.getSource()).getText(), fontSize));
+        text.setFont(new Font(((MenuItem) actionEvent.getSource()).getText(), fontSize));
     }
 
     /**
@@ -86,5 +89,14 @@ public class Controller {
      */
     public void eUndo(ActionEvent actionEvent) {
         text.undo();
+    }
+
+    public void eAbout(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("I have a great message for you!");
+
+        alert.showAndWait();
     }
 }
