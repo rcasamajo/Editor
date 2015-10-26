@@ -3,10 +3,7 @@ package editor;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
@@ -23,12 +20,15 @@ public class Controller {
     public Button btCopy;
     public MenuItem miAAbout;
     public AnchorPane mainPane;
+    public CheckMenuItem cmiOFSans;
+    public CheckMenuItem cmiOFFree;
 
     /**
      * S'executa al iniciar l'aplicació.
      */
     public void initialize(){
         btCopy.setGraphic(new ImageView("copy.png"));
+        cmiOFSans.setSelected(true);
     }
 
     /**
@@ -36,7 +36,11 @@ public class Controller {
      * @param actionEvent Event onAction de tots els MenuItem
      */
     public void setFont(ActionEvent actionEvent) {
-        text.setFont(new Font(((MenuItem) actionEvent.getSource()).getText(), text.getFont().getSize()));
+        CheckMenuItem item = (CheckMenuItem) actionEvent.getSource();
+        cmiOFFree.setSelected(false);
+        cmiOFSans.setSelected(false);
+        item.setSelected(true);
+        text.setFont(new Font(item.getText(), text.getFont().getSize()));
     }
 
     /**

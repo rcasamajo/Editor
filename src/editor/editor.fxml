@@ -28,8 +28,8 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#setFont" text="SansSerif"/>
                         <MenuItem mnemonicParsing="false" onAction="#setFont" text="FreeMono"/>
-                        <CheckMenuItem mnemonicParsing="false" onAction="#setFont" text="SansSerif"/>
-                        <CheckMenuItem mnemonicParsing="false" onAction="#setFont" text="FreeMono"/>
+                        <CheckMenuItem fx:id="cmiOFSans" mnemonicParsing="false" onAction="#setFont" text="SansSerif"/>
+                        <CheckMenuItem fx:id="cmiOFFree" mnemonicParsing="false" onAction="#setFont" text="FreeMono"/>
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Tamany">
