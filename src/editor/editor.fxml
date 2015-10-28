@@ -14,7 +14,7 @@
               <MenuItem fx:id="miFSortir" mnemonicParsing="false" onAction="#sortir" text="Sortir" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" onShowing="#deshabilitarCC" text="Editar">
+            <Menu mnemonicParsing="false" onShowing="#deshabilitarCTEd" text="Editar">
             <items>
                   <MenuItem fx:id="miECopiar" mnemonicParsing="false" onAction="#eCopiar" text="Copiar" />
                   <MenuItem fx:id="miETallar" mnemonicParsing="false" onAction="#eTallar" text="Tallar" />
@@ -26,8 +26,6 @@
               <items>
                   <Menu mnemonicParsing="false" text="Font">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#setFont" text="SansSerif"/>
-                        <MenuItem mnemonicParsing="false" onAction="#setFont" text="FreeMono"/>
                         <CheckMenuItem fx:id="cmiOFSans" mnemonicParsing="false" onAction="#setFont" text="SansSerif"/>
                         <CheckMenuItem fx:id="cmiOFFree" mnemonicParsing="false" onAction="#setFont" text="FreeMono"/>
                     </items>
@@ -57,11 +55,11 @@
             <Font name="SansSerif Regular" size="12.0" />
          </font>
           <contextMenu>
-              <ContextMenu>
+              <ContextMenu onShowing="#deshabilitarCTCont">
                   <items>
-                      <MenuItem fx:id="miECopiar1" mnemonicParsing="false" onAction="#eCopiar" text="Copiar"/>
-                      <MenuItem fx:id="miETallar1" mnemonicParsing="false" onAction="#eTallar" text="Tallar"/>
-                      <MenuItem fx:id="miEPaste1" mnemonicParsing="false" onAction="#ePaste" text="Enganxar"/>
+                      <MenuItem fx:id="miCCopiar" mnemonicParsing="false" onAction="#eCopiar" text="Copiar"/>
+                      <MenuItem fx:id="miCTallar" mnemonicParsing="false" onAction="#eTallar" text="Tallar"/>
+                      <MenuItem mnemonicParsing="false" onAction="#ePaste" text="Enganxar"/>
                   </items>
               </ContextMenu>
           </contextMenu>

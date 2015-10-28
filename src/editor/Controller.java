@@ -22,6 +22,8 @@ public class Controller {
     public AnchorPane mainPane;
     public CheckMenuItem cmiOFSans;
     public CheckMenuItem cmiOFFree;
+    public MenuItem miCCopiar;
+    public MenuItem miCTallar;
 
     /**
      * S'executa al iniciar l'aplicació.
@@ -107,17 +109,32 @@ public class Controller {
     }
 
     /**
-     * Deshabilita els items Copiar i Tallar si no hi ha text seleccionat.
+     * Deshabilita els items Copiar i Tallar del menú Editar si no hi ha text seleccionat.
      *
      * @param event Event onShowing del menú Editar.
      */
-    public void deshabilitarCC(Event event) {
+    public void deshabilitarCTEd(Event event) {
         if (text.getSelectedText().equals("")) {
             miECopiar.setDisable(true);
             miETallar.setDisable(true);
         } else {
             miECopiar.setDisable(false);
             miETallar.setDisable(false);
+        }
+    }
+
+    /**
+     * Deshabilita els items Copiar i Tallar del menú contextual si no hi ha text seleccionat.
+     *
+     * @param event Event onShowing del menú Editar.
+     */
+    public void deshabilitarCTCont(Event event) {
+        if (text.getSelectedText().equals("")) {
+            miCCopiar.setDisable(true);
+            miCTallar.setDisable(true);
+        } else {
+            miCCopiar.setDisable(false);
+            miCTallar.setDisable(false);
         }
     }
 }
