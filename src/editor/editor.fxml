@@ -8,67 +8,68 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.Controller">
+
+<VBox xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.Controller">
    <children>
-      <MenuBar prefHeight="29.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Fitxer">
-            <items>
-              <MenuItem fx:id="miFSortir" mnemonicParsing="false" onAction="#sortir" text="Sortir" />
-            </items>
-          </Menu>
+      <MenuBar prefHeight="29.0" prefWidth="600.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Fitxer">
+               <items>
+                  <MenuItem fx:id="miFSortir" mnemonicParsing="false" onAction="#sortir" text="Sortir" />
+               </items>
+            </Menu>
             <Menu mnemonicParsing="false" onShowing="#deshabilitarCTEd" text="Editar">
-            <items>
+               <items>
                   <MenuItem fx:id="miECopiar" mnemonicParsing="false" onAction="#eCopiar" text="Copiar" />
                   <MenuItem fx:id="miETallar" mnemonicParsing="false" onAction="#eTallar" text="Tallar" />
                   <MenuItem fx:id="miEPaste" mnemonicParsing="false" onAction="#ePaste" text="Enganxar" />
                   <MenuItem fx:id="miEUndo" mnemonicParsing="false" onAction="#eUndo" text="Desfer" />
-            </items>
-          </Menu>
+               </items>
+            </Menu>
             <Menu mnemonicParsing="false" text="Opcions">
-              <items>
+               <items>
                   <Menu mnemonicParsing="false" text="Font">
-                    <items>
+                     <items>
                         <CheckMenuItem fx:id="cmiOFSans" mnemonicParsing="false" onAction="#setFont" text="SansSerif" />
                         <CheckMenuItem fx:id="cmiOFFree" mnemonicParsing="false" onAction="#setFont" text="FreeMono" />
-                    </items>
+                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Tamany">
-                    <items>
+                     <items>
                         <MenuItem fx:id="miOT10" mnemonicParsing="false" onAction="#setFontSize" text="12" />
-                      <MenuItem fx:id="miOT12" mnemonicParsing="false" onAction="#setFontSize" text="14" />
-                    </items>
+                        <MenuItem fx:id="miOT12" mnemonicParsing="false" onAction="#setFontSize" text="14" />
+                     </items>
                   </Menu>
-              </items>
+               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Ajuda">
-            <items>
-              <MenuItem fx:id="miAAbout" mnemonicParsing="false" onAction="#eAbout" text="Sobre Cutreditor" />
-            </items>
-          </Menu>
-        </menus>
+            <Menu mnemonicParsing="false" text="Ajuda">
+               <items>
+                  <MenuItem fx:id="miAAbout" mnemonicParsing="false" onAction="#eAbout" text="Sobre Cutreditor" />
+               </items>
+            </Menu>
+         </menus>
       </MenuBar>
-      <ToolBar layoutY="29.0" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-        <items>
-          <Button fx:id="btCopy" mnemonicParsing="false" onAction="#eCopiar" />
-        </items>
+      <ToolBar prefHeight="49.0" prefWidth="600.0">
+         <items>
+            <Button fx:id="btCopy" mnemonicParsing="false" onAction="#eCopiar" />
+         </items>
       </ToolBar>
-      <TextArea fx:id="text" layoutY="69.0" prefHeight="337.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <TextArea fx:id="text" prefHeight="375.0" prefWidth="600.0">
          <font>
             <Font name="SansSerif Regular" size="12.0" />
          </font>
-          <contextMenu>
-              <ContextMenu onShowing="#deshabilitarCTCont">
-                  <items>
-                      <MenuItem fx:id="miCCopiar" mnemonicParsing="false" onAction="#eCopiar" text="Copiar" />
-                      <MenuItem fx:id="miCTallar" mnemonicParsing="false" onAction="#eTallar" text="Tallar" />
-                      <MenuItem mnemonicParsing="false" onAction="#ePaste" text="Enganxar" />
-                  </items>
-              </ContextMenu>
-          </contextMenu>
+         <contextMenu>
+            <ContextMenu onShowing="#deshabilitarCTCont">
+               <items>
+                  <MenuItem fx:id="miCCopiar" mnemonicParsing="false" onAction="#eCopiar" text="Copiar" />
+                  <MenuItem fx:id="miCTallar" mnemonicParsing="false" onAction="#eTallar" text="Tallar" />
+                  <MenuItem mnemonicParsing="false" onAction="#ePaste" text="Enganxar" />
+               </items>
+            </ContextMenu>
+         </contextMenu>
       </TextArea>
    </children>
-</AnchorPane>
+</VBox>
