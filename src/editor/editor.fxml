@@ -57,7 +57,7 @@
             <Button fx:id="btCopy" mnemonicParsing="false" onAction="#eCopiar" />
          </items>
       </ToolBar>
-      <TextArea fx:id="text" prefHeight="375.0" prefWidth="600.0">
+      <TextArea fx:id="text" prefHeight="375.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
          <font>
             <Font name="SansSerif Regular" size="12.0" />
          </font>
