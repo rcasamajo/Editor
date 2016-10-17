@@ -5,8 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class Controller {
     public TextArea text;
@@ -19,7 +19,6 @@ public class Controller {
     public MenuItem miEUndo;
     public Button btCopy;
     public MenuItem miAAbout;
-    public AnchorPane mainPane;
     public CheckMenuItem cmiOFSans;
     public CheckMenuItem cmiOFFree;
     public MenuItem miCCopiar;
@@ -43,6 +42,11 @@ public class Controller {
         cmiOFSans.setSelected(false);
         item.setSelected(true);
         text.setFont(new Font(item.getText(), text.getFont().getSize()));
+
+        // Accedir al objecte Stage, és a dir la finestra principal
+        Stage stage = (Stage)text.getScene().getWindow();
+        stage.setTitle("CutrEditor - " + item.getText());
+
     }
 
     /**
