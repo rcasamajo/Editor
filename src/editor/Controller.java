@@ -18,6 +18,7 @@ public class Controller {
     public MenuItem miEPaste;
     public MenuItem miEUndo;
     public Button btCopy;
+    public Button btPaste;
     public MenuItem miAAbout;
     public CheckMenuItem cmiOFSans;
     public CheckMenuItem cmiOFFree;
@@ -29,6 +30,7 @@ public class Controller {
      */
     public void initialize(){
         btCopy.setGraphic(new ImageView("copy.png"));
+        btPaste.setGraphic(new ImageView("paste.png"));
         cmiOFSans.setSelected(true);
     }
 

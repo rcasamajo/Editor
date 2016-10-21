@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/8.0.102-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.Controller">
+<VBox xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.Controller">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
          <menus>
@@ -54,6 +54,7 @@
       <ToolBar prefHeight="49.0" prefWidth="600.0">
          <items>
             <Button fx:id="btCopy" mnemonicParsing="false" onAction="#eCopiar" />
+            <Button fx:id="btPaste" mnemonicParsing="false" onAction="#ePaste" />
          </items>
       </ToolBar>
       <TextArea fx:id="text" prefHeight="375.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
